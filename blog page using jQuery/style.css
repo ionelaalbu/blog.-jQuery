@@ -1,0 +1,488 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2D2D2D;
+}
+header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: #2D2D2D;
+    align-items: center;
+    justify-content: space-between;
+}
+#btn{
+   margin-left: 20px;
+   font-size: 30px;
+   background-color: transparent;
+   border: none;
+   color: #fff;
+   cursor: pointer;
+}
+.iconF{
+    color: #fff;
+    font-size: 20px;
+    margin-right: 30px;
+}
+#myInput{
+    font-size: 20px;
+    margin-right: 30px;
+}
+nav{
+    width: 300px;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+ul{
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+li{
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    transition: 1s ;
+    color: #fff;
+}
+li:hover{
+    background-color: black;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 600px;
+}
+.big-parallax{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url("img/bg.jpeg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#titleP{
+    font-size: 130px;
+    color: #fff;
+    text-align: center;
+    margin-top: 30%;
+}
+.firstP{
+    position: absolute;
+    width: 1900px;
+    top: 90%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.thirdP{
+    position: absolute;
+    width: 500px;
+    top: 60%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.fourthP{
+    position: absolute;
+    width: 900px;
+    top: 90%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+/*article/main*/
+main{
+    width: 100%;
+    height: 1300px;
+}
+.article{
+    margin-top: 100px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+#titleArt{
+    text-align: center;
+    color: #fff;
+    font-size: 80px;
+}
+.art{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.article-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+}
+
+/*styling article div*/
+@property --border-angle-1 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
+}
+@property --border-angle-2 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 90deg;
+}
+@property --border-angle-3 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 180deg;
+}
+/* sRGB color. */
+:root {
+    --bright-darkblue: #341f97;
+    --bright-blue: #3498db;
+    --bright-lightblue: #00cec9;
+	--background: black;
+	--foreground: white;
+	--border-size: 2px;
+	--border-radius: 0.75em;
+}
+/* Display-P3 color, when supported. */
+@supports (color: color(display-p3 1 1 1)) {
+	:root {
+        --bright-darkblue: #341f97;
+    --bright-blue: #3498db;
+    --bright-lightblue: #00cec9;
+		
+	}
+}
+@keyframes rotateBackground {
+	to { --border-angle-1: 360deg; }
+}
+@keyframes rotateBackground2 {
+	to { --border-angle-2: -270deg; }
+}
+@keyframes rotateBackground3 {
+	to { --border-angle-3: 540deg; }
+}
+.art1{
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 50px;
+    cursor: pointer;
+	--border-angle-1: 0deg;
+	--border-angle-2: 90deg;
+	--border-angle-3: 180deg;
+	color: inherit;
+	font-size: 40px;
+	font-family: inherit;
+	border: 0;
+	padding: var(--border-size);
+	display: flex;
+	width: max-content;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	background-image: conic-gradient(
+			from var(--border-angle-1) at 10% 15%,
+			transparent,
+			var(--bright-darkblue) 10%,
+			transparent 30%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-2) at 70% 60%,
+			transparent,
+			var(--bright-blue) 10%,
+			transparent 60%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-3) at 50% 20%,
+			transparent,
+			var(--bright-lightblue) 10%,
+			transparent 50%,
+			transparent
+		);
+	animation: 
+		rotateBackground 3s linear infinite,
+		rotateBackground2 8s linear infinite,
+		rotateBackground3 13s linear infinite;
+
+}
+
+/* Change this background to transparent to see how the gradient works */
+.art1 .art11{
+	background: #2D2D2D; 
+    font-size: 50px;
+	padding: 20px;
+	border-radius: calc(var(--border-radius) - var(--border-size));
+	color: #fff;
+}
+#art1{
+    display: none;
+    height: 400px;
+    width: 500px;
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    padding: 50px;
+}
+.info-info{
+    display: flex;
+    flex-direction: column;
+}
+.secondInfo{
+    margin-top: -150px ;
+}
+.info-icon-first{
+    display: flex;
+    flex-direction: row;
+}
+.thirdInfo{
+    margin-top: -300px;
+}
+.fourthInfo{
+    margin-top: -450px;
+}
+/*article2*/
+.article2{
+    margin-top: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#articletitle-info{
+    color: #fff;
+    font-size: 90px;
+    text-align: center;
+}
+.Article-info-firstA{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 500px;
+    margin: 30px 60px;
+    padding: 50px 50px;
+}
+#sahara{
+    float: left;
+    height: 200px;
+    width: 400px;
+    padding-right: 50px;
+}
+#para{
+    float: right;
+}
+#slideButton{
+    margin-top: 40px;
+}
+.Article-title-info-content{
+    font-size: 50px;
+}
+#slideButton{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#para2{
+    display: none;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+}
+#slideButton2{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#slideButton3{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#slideButton4{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#slideButton5{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#slideButton6{
+    width: 200px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+
+
+
+aside{
+    margin-left: 180px;
+    width: 900px;
+    height: 500px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+h6{
+    font-size: 40px;
+}
+/*lastDiv*/
+.lastDiv{
+    margin-top: 3900px;
+    width: 700px;
+    height: 700px;
+    background-color: #fff;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lastDivtitle{
+    margin-bottom: 50px;
+}
+#textField{
+    width: 400px;
+    height: 300px;
+}
+.copy-btn{
+    font-size: 1.3rem;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #25aae1;
+    padding: 10px 5px  ;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    color: #fff ;
+
+
+}
+.copy-btn:hover{
+   border: 3px solid #25aae1;
+   background-color: transparent;
+   color: #25aae1;
+}
+.copy-btn:active{
+    transform: scale(0.98);
+}
+span.copied{
+    display: block;
+    margin-top: 50px;
+    font-size: 26px;
+    color: #858585;
+    transform: scale(0);
+    transition: all 0.5s;
+}
+span.bounce-effect{
+    animation: bounce 0.8s linear;
+}
+@keyframes  bounce{
+    0%{
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    20%{
+        transform: scale(1.1);
+    }
+    40%{
+        transform: scale(0.9);
+    }
+    60%{
+        opacity: 1;
+        transform: scale(1.03);
+    }
+    80%{
+        transform: scale(0.97);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+ 
+/*footer*/
+footer{
+   background-color: black;
+   width: 100%;
+   height: 300px;
+   margin-top: 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: white;
+}
+.bn632-hover{
+    margin-left: 25px;
+    margin-top: 10px;
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 12px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition:  all .4s ease-in-out ;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out ;
+
+}
+.bn632-hover:hover{
+    background-position: 100% 0;
+    -moz-transition: all  .4s ease-in-out ;
+    -o-transition:  all .4s ease-in-out ;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out ;
+}
+.bn632-hover.bn18{
+    background-image: linear-gradient(
+        to right,
+        #25aae1,
+        #40e495,
+        #30dd81,
+        #2bb637
+    );
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+#lastPF{
+    font-size: 40px;
+    color: #341f97;
+}
